@@ -19,7 +19,7 @@ public class Test {
             String nomeGiocatore = input.nextLine();
             System.out.println("Quanta forza ha?");
             int forza = input.nextInt();
-            
+            giocatori[i] = 
         }
         
     }

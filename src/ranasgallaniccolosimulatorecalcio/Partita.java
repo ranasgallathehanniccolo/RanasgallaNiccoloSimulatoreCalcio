@@ -11,16 +11,16 @@ import java.util.Random;
 public class Partita {
     private Squadra casa;
     private Squadra trasferta;
-    private int golCasa;
-    private int golTrasferta;
+    private int golCasa = 0;
+    private int golTrasferta = 0;
     
     private Random random = new Random();
-
-    public Partita(Squadra casa, Squadra trasferta, int golCasa, int golTrasferta) {
+    double probGolCasa=0.0;
+    double probGolTrasferta=0.0;
+    
+    public Partita(Squadra casa, Squadra trasferta) {
         this.casa = casa;
         this.trasferta = trasferta;
-        this.golCasa = golCasa;
-        this.golTrasferta = golTrasferta;
     }
 
     public Squadra getCasa() {
@@ -54,12 +54,31 @@ public class Partita {
     public void setGolTrasferta(int golTrasferta) {
         this.golTrasferta = golTrasferta;
     }
+    private void randomCasa(){
+        int numero = random.nextInt(100);
+        if(numero<= probGolCasa){
+            golCasa++;
+        }
+    }
+    private void randomTrasferta(){
+        int numero = random.nextInt(100);
+        if(numero<= probGolTrasferta){
+            golTrasferta++;
+        }
+    }
     public void simulazione(){
         int forzaCasa = casa.getForzaTotale();
         int forzaTrasferta = trasferta.getForzaTotale();
-        int parateCasa = casa.getPortiere().
-        int parataTrasferta = 
+        int forzaTotale = forzaCasa+forzaTrasferta;
+        int parataCasa = casa.getPortiere().getAbilitaParata();
+        int parataTrasferta = trasferta.getPortiere().getAbilitaParata();
         
-        double probGolCasa = 
+        probGolCasa = (forzaCasa/(forzaTotale+parataTrasferta))*100;
+        probGolTrasferta = (forzaTrasferta/(forzaTotale+parataCasa))*100;
+        
+        randomCasa();
+        randomTrasferta();
+        
+        
     }
 }

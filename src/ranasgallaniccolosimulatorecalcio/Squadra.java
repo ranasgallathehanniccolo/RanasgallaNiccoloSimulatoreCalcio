@@ -16,10 +16,8 @@ public class Squadra {
     private int forzaTotale = 0;
     private int propabilitaGoal;
 
-    public Squadra(String nome, int forzaTotale, int propabilitaGoal) {
+    public Squadra(String nome) {
         this.nome = nome;
-        this.forzaTotale = forzaTotale;
-        this.propabilitaGoal = propabilitaGoal;
         giocatori = new Giocatore[9];
     }
 

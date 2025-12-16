@@ -38,7 +38,7 @@ public class RanasgallaNiccoloSimulatoreCalcio {
         Squadra casa = new Squadra(nomeCasa, giocatoriCasa, portiereCasa);
 
 
-        System.out.println("\nNome squadra in trasferta:");
+        System.out.println("Nome squadra in trasferta:");
         String nomeTrasferta = input.nextLine();
 
         Giocatore[] giocatoriTrasferta = new Giocatore[9];
@@ -71,7 +71,7 @@ public class RanasgallaNiccoloSimulatoreCalcio {
         partita.simulazione();
 
 
-        System.out.println("\nRISULTATO FINALE:");
+        System.out.println("RISULTATO FINALE:");
         System.out.println(casa.getNome() + " " + partita.getGolCasa());
         System.out.println(trasferta.getNome() + " " + partita.getGolTrasferta());
     }

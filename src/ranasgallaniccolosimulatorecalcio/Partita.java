@@ -7,7 +7,6 @@ public class Partita {
     private Squadra trasferta;
     private int golCasa = 0;
     private int golTrasferta = 0;
-
     private Random random = new Random();
 
     public Partita(Squadra casa, Squadra trasferta) {
@@ -15,23 +14,23 @@ public class Partita {
         this.trasferta = trasferta;
     }
 
-    private void controllaInfortuni(Squadra s) {
-        for (Giocatore g : s.getGiocatori()) {
-            if (!g.isInfortunato()) {
-                if (random.nextInt(100) < 10) { // 10%
-                    g.infortuna();
-                }
+
+    private void generaInfortuni(Squadra squadra) {
+        for (Giocatore g : squadra.getGiocatori()) {
+            if (!g.isInfortunato() && random.nextInt(100) < 10) {
+                g.infortuna();
             }
         }
     }
+    
+    public void generaInfortuni() {
+        generaInfortuni(casa);
+        generaInfortuni(trasferta);
+    }
 
     public void simulazione() {
-        controllaInfortuni(casa);
-        controllaInfortuni(trasferta);
-
         double forzaCasa = casa.getForzaTotale();
         double forzaTrasferta = trasferta.getForzaTotale();
-
         double parataCasa = casa.getPortiere().getAbilitaParata();
         double parataTrasferta = trasferta.getPortiere().getAbilitaParata();
 
@@ -44,11 +43,8 @@ public class Partita {
         }
     }
 
-    public int getGolCasa() {
-        return golCasa;
-    }
-
-    public int getGolTrasferta() {
-        return golTrasferta;
-    }
+    public int getGolCasa() { return golCasa; }
+    public int getGolTrasferta() { return golTrasferta; }
 }
+
+

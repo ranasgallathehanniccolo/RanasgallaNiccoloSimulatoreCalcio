@@ -1,0 +1,27 @@
+Citta di Castello
+Gregorio,D'Angelo,71
+Emiliano,Bo,80
+Camillo,Palla,82
+Santino,Fedricci,77
+Mauricio,Pertierra,99
+Facundo,Cabrera,66
+Francesco,Sparago,70
+Felipe,Bergoglio,81
+Nicolas,Bellino,70
+Valentino,Roselli,73
+Alessandro,Guerri,66,88
+Virtus San Giustino
+Bini,Alessio,71
+Giulio,Gorini,80
+Andrea,Poggini,77
+Riccardo,Valori,99
+Edoardo,Bacchi,83
+Edoardo,Valenti,75
+Martino,Carbonaro,60
+Leonardo,Bernacchi,70
+Riccardo,Della Rina,65
+Riccardo,Ferri,81
+Giacomo,Giorni,81,90
+
+
+

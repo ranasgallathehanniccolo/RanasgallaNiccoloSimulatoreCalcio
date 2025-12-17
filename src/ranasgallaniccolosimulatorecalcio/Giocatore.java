@@ -1,9 +1,12 @@
 package ranasgallaniccolosimulatorecalcio;
 
+import java.util.Random;
+
 public class Giocatore {
     private String cognome;
     private int forza;
     private boolean infortunato = false;
+    private Random random = new Random();
 
     public Giocatore(String cognome, int forza) {
         this.cognome = cognome;
@@ -16,7 +19,7 @@ public class Giocatore {
 
     public int getForza() {
         if (infortunato) {
-            return Math.max(0, forza - 10);
+            return Math.max(0, forza - random.nextInt(50));
         }
         return forza;
     }

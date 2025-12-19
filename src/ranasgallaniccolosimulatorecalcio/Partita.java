@@ -8,13 +8,20 @@ public class Partita {
     private int golCasa = 0;
     private int golTrasferta = 0;
     private Random random = new Random();
-
+/**
+ * costruttore partita
+ * @param casa
+ * @param trasferta 
+ */
     public Partita(Squadra casa, Squadra trasferta) {
         this.casa = casa;
         this.trasferta = trasferta;
     }
 
-
+/**
+ * metodo per generare infortunio ai giocatori avendo il 10% di possibilità
+ * @param squadra 
+ */
     private void generaInfortuni(Squadra squadra) {
         for (Giocatore g : squadra.getGiocatori()) {
             if (!g.isInfortunato() && random.nextInt(100) < 10) {
@@ -22,12 +29,16 @@ public class Partita {
             }
         }
     }
-    
+/**
+ * metodo che utilizza il metodo generainfortuni su entrambe le squadre
+ */
     public void generaInfortuni() {
         generaInfortuni(casa);
         generaInfortuni(trasferta);
     }
-
+/**
+ * metodo che va a simulare i gol basandosi sulla forza delle squadre
+ */
     public void simulazione() {
         double forzaCasa = casa.getForzaTotale();
         double forzaTrasferta = trasferta.getForzaTotale();
